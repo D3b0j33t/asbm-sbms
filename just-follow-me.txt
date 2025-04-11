@@ -1,0 +1,8 @@
+To test this project locally on your system:- Open cmd on this directory
+
+Then run these 3 commands one by one:-
+'winget install Yarn.Yarn'
+'yarn install'
+'yarn dev'
+
+then vite will give you a localhost url

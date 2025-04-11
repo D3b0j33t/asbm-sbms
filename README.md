@@ -62,50 +62,159 @@ The application follows a modern component-based architecture with clear separat
 
 ```
 .
-├── public/                             # Static assets
-├── src/                                # Frontend source code
-│   ├── components/                     # Reusable UI components
-│   │   ├── student/                    # Student-specific components
-│   │   ├── reports/                    # Reporting and analytics components
-│   │   ├── notifications/              # Notification system components
-│   │   └── ui/                         # Base UI components from shadcn/ui
-│   ├── context/                        # React context providers for global state
-│   ├── hooks/                          # Custom React hooks for shared logic
-│   ├── integrations/                   # Third-party service integrations
-│   │   └── supabase/                   # Supabase client and type definitions
-│   ├── lib/                            # Utility libraries
-│   ├── pages/                          # Page components for main routes
-│   ├── types/                          # TypeScript type definitions
-│   ├── utils/                          # Utility functions and helpers
+├── bun.lockb                           # Lockfile for Bun (if used)
+├── components.json                     # Component metadata (possibly for ShadCN)
+├── eslint.config.js                    # ESLint configuration
+├── full_dump.sql                       # Database SQL dump
+├── index.html                          # Root HTML template for Vite
+├── just-follow-me.txt                  # Custom project metadata or note
+├── LICENSE                             # Project license
+├── package.json                        # Project metadata and dependencies
+├── package-lock.json                   # npm lockfile
+├── postcss.config.js                   # PostCSS configuration
+├── Project-Overview.md                 # High-level overview of the system
+├── README.md                           # Main project documentation
+├── tailwind.config.ts                  # Tailwind CSS configuration
+├── tsconfig.app.json                   # TypeScript config for app source
+├── tsconfig.json                       # Base TypeScript configuration
+├── tsconfig.node.json                  # TypeScript config for Node.js code
+├── vercel.json                         # Vercel deployment configuration
+├── vite.config.ts                      # Vite build configuration
+├── yarn.lock                           # Yarn lockfile
+├── public/                             # Static public assets
+│   ├── robots.txt                      # Bot crawling and SEO rules
+│   └── lovable-uploads/                # Uploads used in the app
+├── src/                                # Frontend application source code
 │   ├── App.css                         # Global styles
 │   ├── App.tsx                         # Main App component
-│   ├── index.css                       # Additional global styles
-│   ├── main.tsx                        # Application entry point
-│   ├── routes.tsx                      # Application routing configuration
-│   └── vite-env.d.ts                   # Vite environment type declarations
-├── supabase/                           # Supabase backend functions and config
-│   ├── functions/
-│   │   ├── admin-create-users/         # Custom Supabase function to create users
-│   │   │   └── index.ts                # Entry point for admin user creation
-│   │   └── auth/                       # Supabase auth-related functions
-│   │       └── index.ts                # Entry point for auth handling
-│   └── config.toml                     # Supabase configuration
-├── full_dump.sql                       # SQL dump of the database
-├── index.html                          # Base HTML template
-├── bun.lockb                           # Lockfile for Bun package manager
-├── components.json                     # Component configuration (possibly for ShadCN)
-├── eslint.config.js                    # ESLint configuration
-├── package.json                        # Project metadata and dependencies
-├── package-lock.json                   # Dependency lockfile
-├── postcss.config.js                   # PostCSS configuration
-├── README.md                           # Documentation overview of the project
-├── tailwind.config.ts                  # Tailwind CSS configuration
-├── tsconfig.app.json                   # TypeScript config for app
-├── tsconfig.json                       # Root TypeScript configuration
-├── tsconfig.node.json                  # TypeScript config for Node functions
-├── vercel.json                         # Vercel deployment configuration
-├── vite.config.ts                      # Vite bundler configuration
-└── yarn.lock                           # Lockfile for Yarn
+│   ├── index.css                       # Base CSS styles
+│   ├── main.tsx                        # Application bootstrap file
+│   ├── routes.tsx                      # Application routes
+│   ├── vite-env.d.ts                   # Vite-specific TypeScript declarations
+│   ├── components/                     # UI and app components
+│   │   ├── AuthWrapper.tsx
+│   │   ├── ClassroomAlerts.tsx
+│   │   ├── ClassroomNotificationDemo.tsx
+│   │   ├── CourseCard.tsx
+│   │   ├── DashboardLayout.tsx
+│   │   ├── FilesList.tsx
+│   │   ├── FileUploader.tsx
+│   │   ├── Leaderboard.tsx
+│   │   ├── Navigation.tsx
+│   │   ├── NavigationHeader.tsx
+│   │   ├── NotificationIcon.tsx
+│   │   ├── UserAvatar.tsx
+│   │   ├── notifications/              # Notification-specific UI
+│   │   │   └── CreateNotificationDialog.tsx
+│   │   ├── reports/                    # Dashboard/analytics charts and metrics
+│   │   │   ├── AcademicProgressChart.tsx
+│   │   │   ├── AttendanceChart.tsx
+│   │   │   ├── AttendanceTrendsChart.tsx
+│   │   │   ├── BehavioralIncidents.tsx
+│   │   │   ├── BehaviorChart.tsx
+│   │   │   ├── OverviewStats.tsx
+│   │   │   ├── ParticipationChart.tsx
+│   │   │   ├── PerformanceMetrics.tsx
+│   │   │   ├── ReportFilters.tsx
+│   │   │   └── ReportTabs.tsx
+│   │   ├── student/                    # Student-specific UI
+│   │   │   └── EditStudentDialog.tsx
+│   │   └── ui/                         # Reusable shadcn-style UI components
+│   │       ├── accordion.tsx
+│   │       ├── alert-dialog.tsx
+│   │       ├── alert.tsx
+│   │       ├── aspect-ratio.tsx
+│   │       ├── avatar.tsx
+│   │       ├── badge.tsx
+│   │       ├── breadcrumb.tsx
+│   │       ├── button.tsx
+│   │       ├── calendar.tsx
+│   │       ├── card.tsx
+│   │       ├── carousel.tsx
+│   │       ├── chart.tsx
+│   │       ├── checkbox.tsx
+│   │       ├── collapsible.tsx
+│   │       ├── command.tsx
+│   │       ├── context-menu.tsx
+│   │       ├── dialog.tsx
+│   │       ├── drawer.tsx
+│   │       ├── dropdown-menu.tsx
+│   │       ├── form.tsx
+│   │       ├── hover-card.tsx
+│   │       ├── input-otp.tsx
+│   │       ├── input.tsx
+│   │       ├── label.tsx
+│   │       ├── menubar.tsx
+│   │       ├── navigation-menu.tsx
+│   │       ├── pagination.tsx
+│   │       ├── popover.tsx
+│   │       ├── progress.tsx
+│   │       ├── radio-group.tsx
+│   │       ├── resizable.tsx
+│   │       ├── scroll-area.tsx
+│   │       ├── select.tsx
+│   │       ├── separator.tsx
+│   │       ├── sheet.tsx
+│   │       ├── sidebar.tsx
+│   │       ├── skeleton.tsx
+│   │       ├── slider.tsx
+│   │       ├── sonner.tsx
+│   │       ├── switch.tsx
+│   │       ├── table.tsx
+│   │       ├── tabs.tsx
+│   │       ├── textarea.tsx
+│   │       ├── toast.tsx
+│   │       ├── toaster.tsx
+│   │       ├── toggle-group.tsx
+│   │       ├── toggle.tsx
+│   │       ├── tooltip.tsx
+│   │       └── use-toast.ts
+│   ├── context/                        # React Context providers
+│   │   ├── AuthContext.tsx
+│   │   └── NotificationContext.tsx
+│   ├── hooks/                          # Custom React Hooks
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
+│   ├── integrations/                   # API & SDK integrations
+│   │   └── supabase/
+│   │       ├── client.ts
+│   │       └── types.ts
+│   ├── lib/                            # App-wide logic/helpers
+│   │   ├── supabase.ts
+│   │   └── utils.ts
+│   ├── pages/                          # Main route/page components
+│   │   ├── AdminPanel.tsx
+│   │   ├── Calendar.tsx
+│   │   ├── Course.tsx
+│   │   ├── CourseDetails.tsx
+│   │   ├── Dashboard.tsx
+│   │   ├── Index.tsx
+│   │   ├── Leaderboard.tsx
+│   │   ├── Login.tsx
+│   │   ├── NotFound.tsx
+│   │   ├── Profile.tsx
+│   │   ├── RegisterStudent.tsx
+│   │   ├── Reports.tsx
+│   │   ├── StudentDetail.tsx
+│   │   ├── StudentFiles.tsx
+│   │   ├── StudentReports.tsx
+│   │   ├── TeacherFiles.tsx
+│   │   ├── Todo.tsx
+│   │   └── UserProfile.tsx
+│   ├── types/                          # TypeScript types
+│   │   ├── environment.d.ts
+│   │   └── supabase.ts
+│   └── utils/                          # Additional helper utilities
+│       ├── fileProcessing.ts
+│       ├── mockData.ts
+│       └── studentDatabase.ts
+├── supabase/                           # Supabase edge functions
+│   ├── config.toml                     # Supabase project config
+│   └── functions/
+│       ├── admin-create-users/
+│       │   └── index.ts                # Function to create users
+│       └── auth/
+│           └── index.ts                # Auth function entry
 ```
 
 ## 📊 Database Schema

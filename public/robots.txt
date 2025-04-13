@@ -1,20 +1,17 @@
-# Allow major search engines full access
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# Allow social media bots to generate rich previews
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-# For all other bots:
 User-agent: *
-# Block directories or files that aren’t intended for public viewing
+
 Disallow: /node_modules/
 Disallow: /vite/
 Disallow: /src/
@@ -27,14 +24,11 @@ Disallow: /utils/
 Disallow: /*.ts$
 Disallow: /*.tsx$
 
-# Block specific routes that don't add SEO value (e.g. error pages)
 Disallow: /NotFound
 Disallow: /404
 Disallow: /server-error
 Disallow: /error
 
-# Allow everything else
 Allow: /
 
-# Sitemap location for better indexing
 # Sitemap: https://your-domain.com/sitemap.xml

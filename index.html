@@ -22,5 +22,10 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+      const supabase = createClient('https://msnpgbzkycckmosrjfua.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1zbnBnYnpreWNja21vc3JqZnVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ1MjI3NzUsImV4cCI6MjA2MDA5ODc3NX0.S8_UEO6WF4JMjJ-fuxSCwhvDeDmlGT_9JIzRQjVh728');
+      const { data, error } = await supabase.from('todos').select();
+    </script>
   </body>
 </html>
